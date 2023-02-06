@@ -6,5 +6,5 @@ int main(){
    cin >> a;
    cin >> b;
    cin >> c;
-   cout << a+b+c << endl
+   cout << a+b+c << endl;
 }

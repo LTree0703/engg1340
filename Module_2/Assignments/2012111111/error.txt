@@ -1,0 +1,5 @@
+assign.cpp:9:25: error: expected ';' after expression
+   cout << a+b+c << endl
+                        ^
+                        ;
+1 error generated.

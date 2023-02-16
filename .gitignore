@@ -9,3 +9,6 @@
 
 # Ignore files with name 'test'
 */test.*
+
+# Ignore .DS_Store file (a file created by finder, a specific hidden file in MacOS)
+*/.DS_Store

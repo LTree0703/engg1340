@@ -12,3 +12,11 @@
 
 # Ignore .DS_Store file (a file created by finder, a specific hidden file in MacOS)
 */.DS_Store
+
+# Unignore Makefile
+!Makefile
+
+# Ignore all intermediate files during compilation
+*.o 
+*.s
+*.i

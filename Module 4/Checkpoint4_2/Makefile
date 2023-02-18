@@ -1,12 +1,17 @@
 # Answer to Checkpoint 4.2
 FLAGS = -pedantic-errors -std=c++11
 
-calc: 
-	g++ $(FLAGS) -c calc.cpp 
-	g++ $(FLAGS) -c lcm.cpp
-	g++ $(FLAGS) -c gcd.cpp
-	g++ $(FLAGS) -o calc calc.o lcm.o gcd.o 
-	rm -f *.o # optional
+calc: calc.o gcd.o lcm.o
+	g++ $(FLAG) $^ -o $@
+
+calc.o: calc.cpp gcd.h lcm.h
+	g++ $(FLAG) -c $<
+
+lcm.o: lcm.cpp lcm.h gcd.h
+	g++ $(FLAG) -c $<
+
+gcd.o: gcd.cpp gcd.h
+	g++ $(FLAG) -c $<
 
 clean:
 	rm -f calc *.o

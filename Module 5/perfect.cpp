@@ -7,6 +7,20 @@ using namespace std;
 
 const int N = 1000;
 
+bool isPerfect(int num) 
+{
+	// find all divisors of num
+	int sum_of_divisors = 0;
+	for (int i = 1; i <= num/2; i++)
+	{
+		if (num % i == 0)
+		{
+			sum_of_divisors += i;
+		}
+	}
+	return (sum_of_divisors == num);
+}
+
 int main()
 {
 	cout << "For the integers from 1 to " << N << ":\n";

@@ -1,5 +1,5 @@
 // Checkpoint 3.8: BMI Calculator
-# include <iostream>
+#include <iostream>
 using namespace std;
 
 int main()

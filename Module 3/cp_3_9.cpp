@@ -1,5 +1,5 @@
 // Checkpoint 3.9: Reading input until -1
-# include <iostream>
+#include <iostream>
 using namespace std;
 
 int main()

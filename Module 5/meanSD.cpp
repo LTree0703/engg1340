@@ -1,6 +1,6 @@
 // Checkpoint 5.8
-# include <iostream>
-# include <math.h>
+#include <iostream>
+#include <math.h>
 using namespace std;
 
 double cal_mean(double x[5]);

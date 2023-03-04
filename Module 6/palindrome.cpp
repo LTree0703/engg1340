@@ -44,11 +44,10 @@ int main()
     }
     if (isPalindrome(tmp))
     {
-        cout << "The given string is a palindrome." << endl;
+        cout << "The input string is a palindrome." << endl;
     }
     else
     {
-        cout << "The given string is not a palindrome." << endl;
+        cout << "The input string is not a palindrome." << endl;
     }
-    cout << tmp << endl;
 }

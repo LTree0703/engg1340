@@ -21,44 +21,29 @@ int main()
     int i;
     int arr[n];
     cin >> i;
-    if (i > n)
+    if (i < 15)
+    {
+        for (int j = 0; j < i; j++)
+        {
+            arr[j] = j * j;
+        }
+        for (int j = i; j < i+5; j++)
+        {
+            arr[j] = 0;
+        }
+        if (i < 10)
+        {
+            for (int j = i + 5; j < n; j++)
+            {
+                arr[j] = pow(3, j);
+            }
+        }
+    }
+    else 
     {
         for (int j = 0; j < n; j++)
         {
             arr[j] = j * j;
-        }
-    }
-    else if (i > 10 && i < n)
-    {
-        for (int j = 0; j < n; j++)
-        {
-            if (j <= i)
-            {
-                arr[j] = j * j;
-            }
-            else
-            {
-                arr[j] = 0;
-            }
-                
-        }
-    }
-    else
-    {
-        for (int j = 0; j < n; j++)
-        {
-            if (j <= i)
-            {
-                arr[j] = j * j;
-            }
-            else if (j > i && j <= i+5)
-            {
-                arr[j] = 0;
-            }
-            else
-            {
-                arr[j] = pow(3, j);
-            }
         }
     }
     for (int j = 0; j < n; j++)

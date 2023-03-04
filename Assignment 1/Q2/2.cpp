@@ -1,4 +1,4 @@
-# include <iostream>
+#include <iostream>
 using namespace std;
 
 bool isComposite(int num)

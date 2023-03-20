@@ -48,7 +48,7 @@ int main()
 
         if (c == '!')
         {
-            cout << c << endl;
+            cout << c << ' ' << endl;
             break;
         }
         else if ((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z'))

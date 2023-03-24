@@ -5,6 +5,10 @@ The mode of a data set is the number that occurs most frequently in the set.
 Write a program to find the mode of the set that is inputted by the user. Your program should use a dynamic array to store the user input. After printing the result, your program should release the memory allocated to the dynamic array.
 
 You could assume that there is always one and only one mode in the input set.
+
+Solution
+Time complexity: O(n^2)
+Space complexity: O(n)
 */
 
 #include <iostream>

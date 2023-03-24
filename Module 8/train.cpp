@@ -79,7 +79,7 @@ void appendCar(Car *&head, string id) {
 	else // Otherwise, search for the end of the list and insert the new node after it
 	{
 		Car *current = head;
-        while (current->next!= NULL)
+        while (current->next != NULL)
         {
             current = current->next;
         }

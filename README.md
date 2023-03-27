@@ -3,5 +3,6 @@
 
 The Univ. of Hong Kong
 ***
-- Course Materials
-- Assignments
+- Course Materials: shell scripts and c++
+- Assignments: 1, 2 and 3
+- Quiz

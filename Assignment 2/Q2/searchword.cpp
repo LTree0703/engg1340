@@ -54,10 +54,6 @@ bool word_found_in_line(string line, string word, int &total)
                 i += word.length();
                 tmp++;
             }
-            else
-            {
-                //cout << "false, tmp no change" << endl;
-            }
         }
     }
     if (tmp > 0)

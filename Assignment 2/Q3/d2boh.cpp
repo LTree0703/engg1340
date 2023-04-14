@@ -4,7 +4,7 @@
 #include "d2boh.h"
 using namespace std;
 
-int decimal_to_binary(int input, int output[10]) {
+int decimal_to_binary(int input, int output[12]) {
 
 	int count = 0;
 	int factor = 2;
@@ -35,7 +35,7 @@ int decimal_to_binary(int input, int output[10]) {
 	return count;
 }
 
-int decimal_to_octal(int input, int output[10]) {
+int decimal_to_octal(int input, int output[12]) {
 	int count = 0;
 	int factor = 8;
 
@@ -65,7 +65,7 @@ int decimal_to_octal(int input, int output[10]) {
 	return count;
 }
 
-int decimal_to_hexadecimal(int input, char output[10]) {
+int decimal_to_hexadecimal(int input, char output[12]) {
 	int count = 0;
 	int factor = 16;
 

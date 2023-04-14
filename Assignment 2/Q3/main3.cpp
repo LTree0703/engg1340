@@ -9,17 +9,17 @@ int main()
     switch (mode)
     {
         case 2:
-            int output2[10];
+            int output2[12];
             decimal_to_binary(input, output2);
             break;
 
         case 8:
-            int output8[10];
+            int output8[12];
             decimal_to_octal(input, output8);
             break;
 
         case 16:
-            char output16[10];
+            char output16[12];
             decimal_to_hexadecimal(input, output16);
             break;
     }

@@ -41,35 +41,44 @@ void Print(treeNode *currentNode){
 }
 
 treeNode * FindMin(treeNode *currentNode) {
-    treeNode * minimum = currentNode;
-    while (minimum->left != NULL)
+    if (currentNode->left == NULL)
     {
-        minimum = minimum->left;
+        return currentNode;
     }
-    return minimum;
+    else
+    {
+        return FindMin(currentNode->left);
+    }
 }
 
 treeNode * FindMax(treeNode *currentNode) {
-    treeNode * maximum = currentNode;
-    while (maximum->right != NULL)
+    if (currentNode->right == NULL)
     {
-        maximum = maximum->right;
+        return currentNode;
     }
-    return maximum;
+    else
+    {
+        return FindMax(currentNode->right);
+    }
 }
 
 treeNode * Find(treeNode * currentNode, int key) {
-    treeNode * target = currentNode;
-    while (target != NULL)
+    if (currentNode == NULL)
     {
-        if ((target->key) == key)
-            return target;
-        else if ((target->key) > key)
-            target = target->left;
-        else
-            target = target->right;
+        return NULL;
     }
-    return NULL;
+    else if ((currentNode->key) > key)
+    {
+        return Find(currentNode->left, key);
+    }
+    else if ((currentNode->key) < key)
+    {
+        return Find(currentNode->right, key);
+    }
+    else 
+    {
+        return currentNode;
+    }
 }
 
 

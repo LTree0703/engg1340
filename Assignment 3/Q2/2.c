@@ -13,15 +13,20 @@ typedef struct treeNode treeNode;
 treeNode * Insert(treeNode * currentNode, int key) {
     if (currentNode == NULL) {
         // Case 1: If the tree rooted at currentNode is empty
-        // To be implemented
+        // construct a new node
+        treeNode * newNode = malloc(sizeof(treeNode));
+        newNode->key = key;
+        newNode->left = NULL;
+        newNode->right = NULL;
+        currentNode = newNode;
     }
     if (key > (currentNode -> key)) {
         // Case 2: If the tree rooted at currentNode is not empty and if the given key is greater than currentNode -> key
-        // To be implemented
+        currentNode->right = Insert(currentNode->right, key);
     }
     else if (key < (currentNode -> key)) {
         // Case 3: If the tree rooted at currentNode is not empty and if the given key is smaller than currentNode -> key
-        // To be implemented
+        currentNode->left = Insert(currentNode->left, key);
     }
     return currentNode;
 }
@@ -36,15 +41,35 @@ void Print(treeNode *currentNode){
 }
 
 treeNode * FindMin(treeNode *currentNode) {
-    // To be implemented
+    treeNode * minimum = currentNode;
+    while (minimum->left != NULL)
+    {
+        minimum = minimum->left;
+    }
+    return minimum;
 }
 
 treeNode * FindMax(treeNode *currentNode) {
-    // To be implemented
+    treeNode * maximum = currentNode;
+    while (maximum->right != NULL)
+    {
+        maximum = maximum->right;
+    }
+    return maximum;
 }
 
 treeNode * Find(treeNode * currentNode, int key) {
-    // To be implemented
+    treeNode * target = currentNode;
+    while (target != NULL)
+    {
+        if ((target->key) == key)
+            return target;
+        else if ((target->key) > key)
+            target = target->left;
+        else
+            target = target->right;
+    }
+    return NULL;
 }
 
 

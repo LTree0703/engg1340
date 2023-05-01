@@ -3,44 +3,48 @@ using namespace std;
 
 int S(int n)
 {
-    int count = 1;
+    int divisor_num = 1;
     for (int i = 1; i < n/2; i++)
     {
-        if (n%i == 0)
+        if (n % i == 0)
         {
-            count++;
+            divisor_num++;
         }
     }
-    return count;
+    return divisor_num;
 }
 
 bool isAntiprime(int p)
 {
-    int sp = S(p);
-    for (int i = 1; i < p; i++)
+    int s_p = S(p);
+    for (int n = 1; n < p; n++)
     {
-        if (S(i) > sp)
-        {
+        if (S(n) >= s_p)
             return false;
-        }
     }
     return true;
 }
 
 int main()
 {
-    int b;
-    cin >> b;
-    if (b <= 0)
+    int n;
+    cin >> n;
+
+    if (n < 1)
     {
         cout << 1 << endl;
         return 0;
     }
-    int p = b;
-    while (!isAntiprime(p))
+
+    while (1)
     {
-        p++;
+        if (isAntiprime(n))
+        {
+            cout << n << endl;
+            break;
+        }
+        n++;
     }
-    cout << p << endl;
+
     return 0;
 }

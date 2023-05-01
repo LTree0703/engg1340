@@ -1,43 +1,27 @@
 #!/bin/bash
-if [ $# -lt 1 ]
+
+if [ ${#} -lt 1 ]
 then
     exit 0
 fi
 
-words=()
-for word in $(cat $1)
-do 
-    words+=("$word")
-done
-
-most_occurring_words=()
-freq=0
-for w1 in ${words[*]}
+list=$(cat $1 | tr ' ' '\n' | tr ' ' '\n')
+ans=""
+occurrence=0
+for word in $list
 do
-    tmp=0
-    for w2 in ${words[*]}
-    do 
-        if [ $w1 == $w2 ]
-        then
-            tmp=$((tmp+1))
-        fi
-    done
-    if [ $tmp -gt $freq ]
+    count=$(echo $list | tr ' ' '\n' | grep -w $word | wc -l)
+    if [ $count -gt $occurrence ]
     then
-        freq=$tmp
-        most_occurring_words=($w1)
-    elif [ $tmp -eq $freq ]
+        ans=$word
+        occurrence=$count
+    elif [ $count -eq $occurrence ]
     then
-        most_occurring_words+=($w1)
+        ans+=" $word"
     fi
 done
 
-for word in $(echo ${most_occurring_words[*]} | tr ' ' '\n' | sort -ru)
-do 
-    echo $word $freq
+for word in $(echo $ans | tr ' ' '\n' | sort -u) 
+do
+    echo $word $occurrence
 done
-
-
-            
-    
-

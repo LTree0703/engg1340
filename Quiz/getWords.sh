@@ -1,17 +1,26 @@
 #!/bin/bash
-words=()
-if [ $# -lt 1 ]
+
+if [ ${#} -lt 1 ]
 then
     exit 0
 fi
-for w in $(cat $1)
-do 
-    if [[ ! "${words[*]}" =~ "${w}" ]]
+
+list=$(cat $1 | tr ' ' '\n' | tr '  ' '\n')
+
+duplicate=""
+
+for word in $list
+do
+    if [ $(echo $duplicate | tr ' ' '\n' | grep -w $word | uniq | wc -l) -eq 1 ]
     then
-        words+=("$w")
+        continue
     fi
-done
-for w in $(echo "${words[*]}")
-do 
-    echo $w
+
+    if [ $(echo $list | tr ' ' '\n' | grep -w $word | wc -l) -gt 1 ]
+    then 
+        duplicate+=" $word"
+    fi
+
+    echo $word
+    
 done

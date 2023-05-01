@@ -1,0 +1,11 @@
+Apple    orange 
+
+    pineapple 
+PINEAPPLE
+
+APPLE    Orange		orange   orange 
+     
+pineapple
+    apple   
+pineapple
+

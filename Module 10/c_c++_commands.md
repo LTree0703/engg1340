@@ -1,8 +1,9 @@
-# C++ Notes ++
+# C & C++ Notes
 
 **Notes for ENGG1340/COMP2113**
 
 ## **Content**
+**Section 1: C++ Basics**
 
 [\<iostream>](#iostream) \
 [\<string>](#string) \
@@ -14,7 +15,15 @@
 [STL \<map>](#map) \
 [ STL \<algorithm>](#algorithm)
 
----
+**Section 2: C Basics**
+
+[\<stdio.h>](#stdio.h) \
+[\<string.h>](#string.h) \
+[\<stdlib.h>](#stdlib.h) 
+
+<br>
+
+# Section 1: C++ Basics
 
 **<h3 id='iostream'> \<iostream></h3>**
 
@@ -150,6 +159,66 @@
             return a.subject.size() < b.subject.size();
         }
 
+<br>
+
+# Section 2: C Basics
+
+**<h3 id='stdio.h'> \<stdio.h> </h3>**
+1. Format specifiers:
+
+        %d -> int
+        %f -> float/double
+        %c -> char
+        %s -> string
+        %g -> Remove trailing zeros for float and double
+
+        %8s -> format width of the string (right-justified)
+
+2. `scanf("%d", &var)`: read user input (using pass by reference)
+
+***Note: for reading an array (e.g. a string), we don't need to put & as the array is itself a pointer pointing to the first element of that array***
+
+3. `printf("%d", var)`: print variable on screen
+
+### **\*Pass by reference in C**
+
+        swap(&a, &b);
+        void swap (double *a, double *b){
+                double temp = *a; // deference the addresses
+                *a=*b;
+                *b=temp;
+        }
+
+**<h3 id='string.h'> \<string.h> </h3>**
+
+--> char s[] string; // an array of char = string 
+
+1. `strcpy(char s1[], char s2[])`: copy char array s2 to s1
+
+2. `strcat(char s1[], char s2[])`: append s2 after the end of s1 -> s1 += s2
+
+3. `strcmp(char s1[], char s2[])`: return negative if s1 < s2, return 0 if s1 == s2, return positive if s1 > s2
+
+4. `strlen(char s1[])`: return the length of string
+
+**<h3 id='stdlib.h'> \<stdlib.h> </h3>**
+
+**aka. dynamic memory management**
+
+1. `void *malloc(int size)`: return a pointer to the allocated memory (pointer not defined as a particular type)
+
+2. `int sizeof()`: return the size of a specific data type (self-defined as well)
+
+3. `void free(void *ptr)`: free the memory allocated
+
+
+### **\*struct and typedef**
+
+        struct student {
+                char name[20];
+                int uid;
+        }; typedef struct student Student;
+**Note: struct constructors are merely a feature of c++ but not c (i.e. c does not support object-oriented programming)**
 
 <br>
 <center>-- END OF NOTE --</center>

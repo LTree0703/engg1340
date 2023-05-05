@@ -11,3 +11,5 @@ main3: d2boh.o main3.o
 
 clean:
 	rm -f main3 main3.o d2boh.o
+
+.PHONY: clean

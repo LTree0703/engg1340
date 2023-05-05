@@ -30,7 +30,7 @@ public:
 private:
 	/* The data type is decided by your records; */ 
 	map<Student, int> records;
-	vector<int> grades;
+	vector<int> grades; // for statistics purpose only
 };
 
 bool operator < (const Student&a, const Student&b) {
@@ -92,20 +92,28 @@ void Table::SearchbyGrade(int y) {
 // Print the maximum, minimum, and median of grades
 void Table::Statistics() {
 	if (!grades.empty())
-	sort(grades.begin(), grades.end());
-	cout << "Maximum " << grades.back() << endl;
-	int mid = grades.size() / 2;
-	float median = 0.0;
-	if (grades.size() % 2 == 0) // even size
 	{
-		median = (grades[mid] + grades[mid-1]) / 2.0;
+		sort(grades.begin(), grades.end());
+		cout << "Maximum " << grades.back() << endl;
+		int mid = grades.size() / 2;
+		float median = 0.0;
+		if (grades.size() % 2 == 0) // even size
+		{
+			median = (grades[mid] + grades[mid-1]) / 2.0;
+		}
+		else
+		{
+			median = grades[mid];
+		}
+		cout << "Median " << median << endl;
+		cout << "Minimum " << grades.front() << endl;
 	}
 	else
 	{
-		median = grades[mid];
+		cout << "Maximum 0" << endl;
+		cout << "Median 0" << endl;
+		cout << "Minimum 0" << endl;
 	}
-	cout << "Median " << median << endl;
-	cout << "Minimum " << grades.front() << endl;
 
 }
 

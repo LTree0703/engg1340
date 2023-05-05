@@ -20,11 +20,11 @@ treeNode * Insert(treeNode * currentNode, int key) {
         newNode->right = NULL;
         currentNode = newNode;
     }
-    if (key > (currentNode -> key)) {
+    if (key > (currentNode->key)) {
         // Case 2: If the tree rooted at currentNode is not empty and if the given key is greater than currentNode -> key
         currentNode->right = Insert(currentNode->right, key);
     }
-    else if (key < (currentNode -> key)) {
+    else if (key < (currentNode->key)) {
         // Case 3: If the tree rooted at currentNode is not empty and if the given key is smaller than currentNode -> key
         currentNode->left = Insert(currentNode->left, key);
     }
@@ -32,7 +32,7 @@ treeNode * Insert(treeNode * currentNode, int key) {
 }
 
 void Print(treeNode *currentNode){
-    if(currentNode ==NULL){
+    if(currentNode == NULL){
         return;
     }
     Print(currentNode->left);
@@ -41,7 +41,11 @@ void Print(treeNode *currentNode){
 }
 
 treeNode * FindMin(treeNode *currentNode) {
-    if (currentNode->left == NULL)
+    if (currentNode == NULL)
+    {
+        return NULL;
+    }
+    else if (currentNode->left == NULL)
     {
         return currentNode;
     }
@@ -52,7 +56,11 @@ treeNode * FindMin(treeNode *currentNode) {
 }
 
 treeNode * FindMax(treeNode *currentNode) {
-    if (currentNode->right == NULL)
+    if (currentNode == NULL)
+    {
+        return NULL;
+    }
+    else if (currentNode->right == NULL)
     {
         return currentNode;
     }
@@ -83,7 +91,7 @@ treeNode * Find(treeNode * currentNode, int key) {
 
 
 
-int main() {
+int main(void) {
     treeNode *root = NULL;
 
     char command[30];
@@ -110,13 +118,16 @@ int main() {
         else if (strcmp(command, "FINDMIN") == 0) {
             treeNode * temp;
             temp = FindMin(root);
-            printf("Minimum element is %d\n", temp -> key);
+            if (temp != NULL)
+                printf("Minimum element is %d\n", temp -> key);
         }
         else if (strcmp(command, "FINDMAX") == 0) {
             treeNode * temp;
             temp = FindMax(root);
-            printf("Maximum element is %d\n", temp -> key);
+            if (temp != NULL)
+                printf("Maximum element is %d\n", temp -> key);
         }
         scanf("%s", command);
     }
+    return 0;
 }
